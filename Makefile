@@ -12,4 +12,7 @@ versions:
 latest:
 	docker build -t $(NAME):latest --rm --no-cache  .
 
+run:
+	docker run -d -v /srv/squid:/data -p 3128:3128 $(NAME):latest
+
 all: latest versions
