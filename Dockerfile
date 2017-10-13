@@ -4,8 +4,10 @@ MAINTAINER Roman v. Gemmeren <strowi@hasnoname.de>
 EXPOSE 3128
 VOLUME ["/data"]
 
-RUN apk --update --no-cache add squid \
-  # Point cache directory to /data
+# Upgrade Alpine and install squid
+# then point cache directory to /data
+RUN apk --update-cache upgrade \
+  && apk --update --no-cache add squid \
   && rm -fr /var/cache/squid \
   && ln -sf /data /var/cache/squid \
   && rm -fr /var/cache/apk/* \
