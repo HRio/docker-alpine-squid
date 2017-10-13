@@ -1,4 +1,4 @@
-NAME = docker.netfed.local/squid
+NAME = alpine-squid
 VERSIONS =
 
 .PHONY: allg versions latest

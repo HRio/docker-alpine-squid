@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:3.6
 MAINTAINER Roman v. Gemmeren <strowi@hasnoname.de>
 
 EXPOSE 3128
