@@ -9,8 +9,9 @@ done
 # default behaviour is to launch squid
 if [[ -z ${1} ]]; then
 
-  chown -R squid:squid /data /dev/stdout \
-  && chmod ugo+w /dev/stdout
+  chown -R squid:squid /data
+  chown squid:squid /dev/stdout
+  chmod ugo+w /dev/stdout
 
   if [[ ! -d ${SQUID_CACHE_DIR}/00 ]]; then
     echo "Initializing cache..."
